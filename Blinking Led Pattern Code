@@ -1,0 +1,57 @@
+int ledPin[9] = {13,12,11,10,9,8,7,6,5};
+int i=0;
+void setup() {
+  for(i=0;i<9;i++){
+    pinMode(ledPin[i], OUTPUT);  
+  }
+}
+void loop() {
+  //blinking lights
+  for(i=0;i<9;i++){
+    digitalWrite(ledPin[i], HIGH);  
+  }
+  delay(500);
+  for(i=0;i<9;i++){
+    digitalWrite(ledPin[i], LOW);  
+  }
+  delay(500);
+  //running lights
+  for(i=0;i<9;i++){
+    digitalWrite(ledPin[i], HIGH);
+    delay(100);
+  }
+  for(i=0;i<9;i++){
+    digitalWrite(ledPin[i], LOW);
+    delay(100);
+  }
+  //running lights version 2
+  for(i=0;i<9;i++){
+    digitalWrite(ledPin[i], HIGH);
+    delay(100);
+    digitalWrite(ledPin[i], LOW);  
+    delay(100);
+  }
+  for(i=9;i>=0;i--){
+    digitalWrite(ledPin[i], HIGH);
+    delay(100);
+    digitalWrite(ledPin[i], LOW);  
+    delay(100);
+  }
+  // odd even lights
+  for(i=0;i<9;i+=2){
+    digitalWrite(ledPin[i], HIGH);  
+  }
+  delay(500);
+  for(i=0;i<9;i+=2){
+    digitalWrite(ledPin[i], LOW);  
+  }
+  delay(500);
+  for(i=1;i<9;i+=2){
+    digitalWrite(ledPin[i], HIGH);  
+  }
+  delay(500);
+  for(i=1;i<9;i+=2){
+    digitalWrite(ledPin[i], LOW);  
+  }
+  delay(500);
+}
